@@ -7,16 +7,9 @@ import { InBaseComponent } from './in-base/in-base.component';
 import { ExBaseComponent } from './ex-base/ex-base.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    InBaseComponent,
-    ExBaseComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, InBaseComponent, ExBaseComponent],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

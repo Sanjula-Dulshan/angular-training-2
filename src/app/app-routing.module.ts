@@ -4,9 +4,20 @@ import { InBaseComponent } from './in-base/in-base.component';
 import { ExBaseComponent } from './ex-base/ex-base.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/internal', pathMatch: 'full' },
-
-  { path: 'internal', component: InBaseComponent },
+  { path: '', redirectTo: '/external', pathMatch: 'full' },
+  {
+    path: 'internal',
+    component: InBaseComponent,
+    children: [
+      {
+        path: 'reg',
+        loadChildren: () =>
+          import('./registration-module/registration-module.module').then(
+            (m) => m.RegistrationModule
+          ),
+      },
+    ],
+  },
   { path: 'external', component: ExBaseComponent },
 ];
 
